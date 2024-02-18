@@ -2,14 +2,15 @@
 // #include <iostream>
 // #include <utility>
 //  #include <vector>
+//#include<iterator>
 using namespace std;
 
-//link to https://www.geeksforgeeks.org/cpp-stl-interview-questions/?ref=shm
-// STL is one of the unique abilities of C++ which makes it stand out from every other programming language.
-// STL stands for standard template library which contains a lot of pre-defined templates in terms of containers
-//  and classes which makes it very easy for
-// developers or programmers to implement different data structures easily without having to write complete code
-//  and worry about space-time complexities.
+// link to https://www.geeksforgeeks.org/cpp-stl-interview-questions/?ref=shm
+//  STL is one of the unique abilities of C++ which makes it stand out from every other programming language.
+//  STL stands for standard template library which contains a lot of pre-defined templates in terms of containers
+//   and classes which makes it very easy for
+//  developers or programmers to implement different data structures easily without having to write complete code
+//   and worry about space-time complexities.
 
 // disadvantages
 // It is not a standard header file of C++ library.It includes lots of unnecessary stuff and increases compilation time.
@@ -21,6 +22,7 @@ using namespace std;
 // Pairs
 void explainPair()
 {
+   // included in the <utility> header file
    pair<int, int> p1 = {1, 3};
    cout << p1.first << " " << p1.second << endl;
    pair<int, pair<int, int>> p2 = {1, {3, 4}};
@@ -57,7 +59,7 @@ void explainPair()
 
 void explainVector()
 {
-  // included in <vector> header file
+   // included in <vector> header file
    vector<pair<int, int>> vec;
    vec.push_back({1, 2});
    vec.emplace_back(3, 4); // faster than push_back, doesn't need to pass the pair as objects
@@ -100,9 +102,9 @@ void explainVector()
 
 void explainList()
 {
-   //implemented using a dynamic doubly linked list with traversal in both directions.
-   // included in <list> header file
-   //insertion and deletion are quick (constant time).
+   // implemented using a dynamic doubly linked list with traversal in both directions.
+   //  included in <list> header file
+   // insertion and deletion are quick (constant time).
    list<int> ls;
    ls.push_back(2);      // {2} it is faster than insert in arrays
    ls.emplace_back(4);   // {2, 4}
@@ -125,7 +127,7 @@ void explainList()
 
 void explainStack()
 {
-      // included in <stack> header file
+   // included in <stack> header file
    // all the opration takes only O(1) time complexity
    stack<int> st;
    st.push(1);                // {1} 4
@@ -162,9 +164,9 @@ void explainQueue()
 
 void explainPQ()
 {
-   //priority queue - stores element based on priority ,usually in decending order,here follows heap-data structure
-   //included in <queue> header file
-   // push,pop - O(logn),top-O(1)
+   // priority queue - stores element based on priority ,usually in decending order,here follows heap-data structure
+   // included in <queue> header file
+   //  push,pop - O(logn),top-O(1)
 
    priority_queue<int> pq;   // intially it'll be max-heap
    pq.push(5);               // {5}
@@ -200,27 +202,22 @@ void explainSet()
    // empty() and swap() are same as those of above
    // {1, 2, 3, 4, 5}
 
-   auto it = st.find(3); //find returns an iterator of the element
+   auto it = st.find(3); // find returns an iterator of the element
    // {1, 2, 3, 4, 5}
-   auto it = st.find(6); //if not in the array it'll return an iterator pointing to set.end()
+   auto i = st.find(6); // if not in the array it'll return an iterator pointing to set.end()
    // {1, 4, 5}
-   st.erase (5); // erases 5 // takes logarithmic time
+   st.erase(5); // erases 5 // takes logarithmic time
    int cnt = st.count(1);
-   auto it = st. find (3);
-   st erase(it). // it takes constant time
-
-   int cnt = st.count(1)
-   auto it = st. find (3);
-   st.erase (it); // it takes constant time
+   st.erase(it); // it takes constant time
 
    // {1, 2, 3, 4, 5)
    auto it1 = st.find(2);
    auto it2 = st.find(4);
-   st.erase (it1, it2); // after erase {1, 4, 5} [first, last)
+   st.erase(it1, it2); // after erase {1, 4, 5} [first, last)
 
-   //lower_bound () and upper_bound () function works in the same way as in vector it does.
-   auto it = st. lower_bound (2);
-   auto it = st.upper_bound (3);
+   // lower_bound () and upper_bound () function works in the same way as in vector it does.
+   //  auto it = st.lower_bound(2);
+   //  auto it = st.upper_bound(3);
 }
 
 void lower_upper()
@@ -267,6 +264,75 @@ void lower_upper()
       cout << y;
 }
 
+void explainMultiSet()
+{
+   // Everything is same as set
+   // can also stores duplicate elements in sorted order
+   multiset<int> ms;
+   ms.insert(1); // {1}
+   ms.insert(1); // {1, 1}
+   ms.insert(1); // {1, 1, 1}
+   ms.erase(1);  // all 1's erased.
+   int cnt = ms.count(1);
+   // only a single one erased
+   ms.erase(ms.find(1));
+   // ms.erase(ms.find(1), ms.find(1)+cnt);
+   // rest all function same as set
+}
+
+// unordered_set stores unique elements only but not in sorted order
+// most of the cases are time-complexity-O(1)
+// in rare worst cases it may go upto O(n)
+// lower and upper bound doesn't work
+
+void explainMap()
+{
+   // map stores element in the form of {key,value} pair,key can be string,char,int, pair<int,int> and the key will be in sorted ordered
+   //  it is defined inside the <map> header file.
+
+   map<int, int> mpp;  //same as pair 
+   // we also set the key like these
+   //  map<int, pair<int, int>> mpp;
+   //  map< pair<int, int>, int> mpp;
+
+   mpp[1] = 2;
+   mpp.emplace(3, 1); //the key will be stores after 2
+   mpp.insert({2, 4});
+   mpp.insert({2, 6});//duplicate keys are not allowed
+   for(auto it: mpp){
+   cout <<it.first << " " <<it.second <<endl;
+   }
+   cout<<mpp[1]<<endl;
+   cout<<mpp[5]<<endl; //key 5 is not in mpp so printed 0
+   auto i = mpp.find(3); //find the value via key-3
+   cout <<(*i).first<<endl;
+
+   
+   map<string, int> map;
+   // Insert some values into the map
+   map["one"] = 1;
+   map["two"] = 2;
+   map["three"] = 3;
+   cout << "Size of map: " << map.size() << endl;
+   for (auto it : map)
+   {
+      cout<< it.first << " " << it.second << endl;
+   }
+}
+
+//multimap - it can have duplicate keys in sorted order
+//same as map
+//  it is defined inside the <map> header file.
+
+
+//unordered_map - key cannot have duplicates and not in sorted order
+//included in <unordered_map> header file
+// implemented using Hash Table ,insert,delete,serach are done in O(1) Time complexity
+//in  worst case it can go  upto O(n)
+//condition to check if the element in the u_map or not - if (umap.find(key) == umap.end()) if it is true then it'll be not found in the u_map
+
+//cout << itr->first << "  " << itr->second << endl; 
+
 int main()
 {
 
@@ -276,6 +342,8 @@ int main()
    // explainStack();
    // explainQueue();
    // explainPQ();
-   lower_upper();
+   // lower_upper();
+   // explainMultiSet();
+   explainMap();
    return 0;
 }
