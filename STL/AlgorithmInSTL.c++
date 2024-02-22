@@ -28,8 +28,17 @@ void extra(){
 
     int num=7;
     int cnt = __builtin_popcount(num); //gives the number of one in the bits time complexity-O(b),b-number of bits
-    cout<<cnt;
+    cout<<cnt<<endl;
+    
+    cout<<"--Permutation of string--"<<endl;
+    string s="Abc"; //it can also be numbers
+    do{
+        cout<<s<<endl;
+    }while(next_permutation(s.begin(),s.end()));
 
+    int max = *max_element(a,a+5);
+    int min = *min_element(a,a+5);
+    cout<<max<<" "<<min;
 }
 int main(){
     extra();
