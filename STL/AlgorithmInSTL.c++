@@ -45,6 +45,8 @@ void extra(){
     int max = *max_element(a,a+5);
     int min = *min_element(a,a+5);
     cout<<max<<" "<<min;
+
+ accumulate(nums.begin(),nums.end(),0); //gives the sum of the all the lements in the array
 }
 int main(){
     extra();
