@@ -29,6 +29,7 @@ void extra(){
     int num=7;
     int cnt = __builtin_popcount(num); //gives the number of one in the bits time complexity-O(b),b-number of bits
     cout<<cnt<<endl;
+    cout<<log10(num)+1<<endl;//gives no of digits in the number
 
     string name="Helloworld";
     for(int i=0;i<name.size();i++){
