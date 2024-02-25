@@ -29,6 +29,11 @@ void extra(){
     int num=7;
     int cnt = __builtin_popcount(num); //gives the number of one in the bits time complexity-O(b),b-number of bits
     cout<<cnt<<endl;
+
+    string name="Helloworld";
+    for(int i=0;i<name.size();i++){
+     cout<<name.substr(i,3); //here 3 is the length of the substring that needs to created for pasess,i- starting index of the substring
+    }
     
     cout<<"--Permutation of string--"<<endl;
     string s="Abc"; //it can also be numbers
