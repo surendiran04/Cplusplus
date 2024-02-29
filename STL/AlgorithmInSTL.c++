@@ -47,6 +47,10 @@ void extra(){
     cout<<max<<" "<<min;
 
  accumulate(nums.begin(),nums.end(),0); //gives the sum of the all the lements in the array
+
+ string stg='1011';
+ int carry=stg[0]-'0'; //it coverts the string to a number;
+ string ans=carry+'0'; //it converts the number into a string
 }
 int main(){
     extra();
