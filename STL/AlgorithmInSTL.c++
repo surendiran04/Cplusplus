@@ -51,6 +51,9 @@ void extra(){
  string stg='1011';
  int carry=stg[0]-'0'; //it coverts the string to a number;
  string ans=carry+'0'; //it converts the number into a string
+
+ string st="101";
+ int number=stoi(st); // stoi coverts string to an integer
 }
 int main(){
     extra();
