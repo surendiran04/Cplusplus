@@ -53,7 +53,7 @@ void explainPair()
 
 // assign() – It assigns new value to the vector elements by replacing old ones
 // push_back() – It push the elements into a vector from the back
-// pop_back() –  to pop or remove elements from a vector from the back. (last element is deleted from vector)
+// pop_back() –  to remove elements from a vector from the back. (last element is deleted from vector)
 // swap() – It is used to swap the contents of one vector with another vector of same type. Sizes may differ.
 // clear() – It is used to remove all the elements of the vector container
 
