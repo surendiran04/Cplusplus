@@ -285,6 +285,10 @@ void explainMultiSet()
 // in rare worst cases it may go upto O(n)
 // lower and upper bound doesn't work
 
+//The insert() function returns a pair of values: - both in set and unordered_set
+//The first value is an iterator pointing to the inserted element (or the existing element if it already exists).
+//The second value is a boolean indicating whether the insertion was successful (i.e., whether the element was newly inserted).
+
 void explainMap()
 {
    // map stores element in the form of {key,value} pair,key can be string,char,int, pair<int,int> and the key will be in sorted ordered
