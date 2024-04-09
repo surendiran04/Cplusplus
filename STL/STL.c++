@@ -22,13 +22,19 @@ using namespace std;
 // Pairs
 void explainPair()
 {
-   // included in the <utility> header file
+   // included in the <utility> header file                     
    pair<int, int> p1 = {1, 3};
    cout << p1.first << " " << p1.second << endl;
    pair<int, pair<int, int>> p2 = {1, {3, 4}};
    cout << p2.first << " " << p2.second.second << " " << p2.second.first << endl;
    pair<int, int> arr[] = {{1, 2}, {2, 5}, {5, 1}};
    cout << arr[1].second;
+
+   // make_pair(key,value) - fn creates a pair object inside any container
+   pair<int, string> p1;
+    p1 = make_pair(1, "GeeksforGeeks");  // Pair Initialized using make_pair()
+    auto p2 = make_pair("GeeksforGeeks", 1);  // Using it with auto type deduction
+
 }
 
 // Vectors are the same as dynamic arrays with the ability to resize itself automatically when an element is inserted or
