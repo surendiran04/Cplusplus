@@ -54,6 +54,15 @@ void extra(){
 
  string st="101";
  int number=stoi(st); // stoi coverts string to an integer
+
+// std::istringstream class is part of the <sstream> header and provides a way to stream input from a string.
+ std::string input = "1 2 3";
+    std::istringstream my_stream(input);
+    int n;
+    my_stream >> n;  //use in a while loop to get the whole words in the string while(my_stream >> n ){ }
+    std::cout << n << "\n"; // Output: 1
+    return 0;
+
 }
 int main(){
     extra();
