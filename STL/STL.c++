@@ -146,11 +146,19 @@ void explainStack()
    cout << st.top() << endl;  // 3
    cout << st.size() << endl; // 4
    cout << st.empty();        // 0 - false
-   stack<int> st2;
-   st.swap(st2);  //copy the elements st into st2
-   cout<<st2.empty()<<endl;
+   stack<int> st1,st2;
+   st1.push(1);                // {1} 4
+   st1.push(2);                // {2, 1}
+   st1.push(3);                // {3, 2, 1}
+   st1.push(3);                //{3,3,2,1}
+   st2.push(6);                //{6}
+   st.swap(st2);               //swaps both the stacks  
+   while(!st.empty()){
+       cout<<st.top()<<endl;  //6
+            st.pop();
+   }
    while(!st2.empty()){
-       cout<<st2.top()<<endl;  //{5,3,3,2,1}
+       cout<<st2.top()<<endl;  //{3,3,2,1}
             st2.pop();
    }
 }
@@ -195,6 +203,27 @@ void explainPQ()
    Pq.push(8);                                        // {2, 5, 8}
    Pq.emplace(10);                                    // {2, 5, 8, 10}
    cout << Pq.top();                                  // prints 2
+   queue<char> queue1, queue2;
+    int v = 96;
+    for (int i = 0; i < 5; ++i) {
+        queue1.push(v + 1);
+        ++v;
+    }
+    for (int i = 0; i < 4; ++i) {
+        queue2.push(v + 1);
+        ++v;
+    }
+    queue1.swap(queue2);  // Swap the elements
+    cout << "queue1 = ";
+    while (!queue1.empty()) {
+        std::cout << queue1.front() << " "; //queue1 = f g h i 
+        queue1.pop();
+    }
+    cout << "\nqueue2 = ";
+    while (!queue2.empty()) {
+        std::cout << queue2.front() << " ";  //queue2 = a b c d e 
+        queue2.pop();
+    }
 }
 
 void explainSet()
