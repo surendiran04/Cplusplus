@@ -146,8 +146,13 @@ void explainStack()
    cout << st.top() << endl;  // 3
    cout << st.size() << endl; // 4
    cout << st.empty();        // 0 - false
-   stack<int> st1, st2;
-   st1.swap(st2);
+   stack<int> st2;
+   st.swap(st2);  //copy the elements st into st2
+   cout<<st2.empty()<<endl;
+   while(!st2.empty()){
+       cout<<st2.top()<<endl;  //{5,3,3,2,1}
+            st2.pop();
+   }
 }
 
 void explainQueue()
