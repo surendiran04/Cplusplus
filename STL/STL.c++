@@ -99,9 +99,21 @@ void explainVector()
    { // instead of auto we can also use vector<int>::iterator
       cout << *(it) << " ";
    }
+   
+   cout<<endl;
+    vector<int>::reverse_iterator it=v.rbegin();
+    for(;it!=v.rend();it++){
+        cout<<(*it)<<" ";
+    }
+    cout<<endl;
+    vector<int>::reverse_iterator it1=v.rend();
+    it1--;
+    for(;it1>=v.rbegin();it1--){
+        cout<<(*it1)<<" ";
+    }
+   cout<<endl;
    v.clear();
-   cout << endl
-        << v.empty(); // returns 1 if empty else 0
+   cout << endl << v.empty(); // returns 1 if empty else 0
 }
 
 // A list in STL is a contiguous container that allows the inserting and erasing of elements in constant time and iterating in both directions.
