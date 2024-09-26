@@ -5,7 +5,7 @@ using namespace std;
              if(p1.second < p2.second) return true; //sorts in ascending order of the second element
              if(p1.second > p2.second) return false; //sorts in ascending order of the second element
               //if the both the second elements are same,the sorts acc to the first value
-             if(p1.first < p2.first) return true; //if it is > then it sorts acc to the descending order of first element
+             if(p1.first < p2.first) return true; //if it is > then it sorts acc to the ascending order of first element
              return false;
     }
 void extra(){
