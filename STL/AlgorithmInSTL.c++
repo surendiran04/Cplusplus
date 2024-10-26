@@ -63,6 +63,21 @@ void extra(){
     std::cout << n << "\n"; // Output: 1
     return 0;
 
+    string str1 = "hello";
+    string str2 = "hello world";
+
+    cout << str1.compare(str2) << endl;           // Result is negative, as "hello" < "hello world"
+
+    cout << str2.compare(0, 5, str1) << endl;     // Result is 0, as "hello" == "hello"
+
+    cout << str2.compare(6, 5, str1, 0, 5) << endl; // Result is positive, as "world" > "hello" 
+
+    cout << str2.compare(6, 5, str2, 6, 5) << endl; // Result is 0, as "word" == "world"
+
+    cout << str1.compare("hello") << endl;        // Result is 0, as both strings are equal
+
+
+
 }
 int main(){
     extra();
