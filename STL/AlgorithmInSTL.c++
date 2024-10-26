@@ -61,7 +61,6 @@ void extra(){
     int n;
     my_stream >> n;  //use in a while loop to get the whole words in the string while(my_stream >> n ){ }
     std::cout << n << "\n"; // Output: 1
-    return 0;
 
     string str1 = "hello";
     string str2 = "hello world";
@@ -75,6 +74,12 @@ void extra(){
     cout << str2.compare(6, 5, str2, 6, 5) << endl; // Result is 0, as "word" == "world"
 
     cout << str1.compare("hello") << endl;        // Result is 0, as both strings are equal
+
+    string path = "/home/user/documents/file.txt";
+    
+    // Find the last occurrence of '/'
+    size_t pos = path.find_last_of('/');
+    cout<<path.substr(0,pos); ///home/user/documents
 
 
 
