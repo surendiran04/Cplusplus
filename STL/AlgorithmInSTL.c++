@@ -81,7 +81,7 @@ void extra(){
     size_t pos = path.find_last_of('/');
     cout<<path.substr(0,pos); ///home/user/documents
 
-
+    cout<<string(3,'a') //aaa string(count,char)  - make the char count times
 
 }
 int main(){
